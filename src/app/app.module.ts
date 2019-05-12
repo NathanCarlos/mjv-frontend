@@ -9,14 +9,16 @@ import { NgxPaginationModule } from 'ngx-pagination';
 
 import { NavigationComponent } from './pages/website/navigation/navigation.component';
 import { HomeComponent } from './pages/website/home/home.component';
-import { ProductListComponent } from './pages/website/product-list/product-list.component'
+import { ProductListComponent } from './pages/website/product-list/product-list.component';
+import { FooterComponent } from './pages/website/footer/footer.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
     HomeComponent,
-    ProductListComponent
+    ProductListComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
