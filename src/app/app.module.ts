@@ -8,13 +8,15 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxPaginationModule } from 'ngx-pagination';
 
 import { NavigationComponent } from './pages/website/navigation/navigation.component';
-import { HomeComponent } from './pages/website/home/home.component'
+import { HomeComponent } from './pages/website/home/home.component';
+import { ProductListComponent } from './pages/website/product-list/product-list.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
-    HomeComponent
+    HomeComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,
