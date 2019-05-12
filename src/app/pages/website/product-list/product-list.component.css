@@ -1,0 +1,9 @@
+.container-card {
+  width: 18rem;
+  margin-top: 1%;
+}
+.card-display {
+  display: inline-block;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
