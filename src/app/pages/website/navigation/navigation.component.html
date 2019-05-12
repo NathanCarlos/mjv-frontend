@@ -1,6 +1,16 @@
 <nav class="navbar navbar-dark navBackgroundColor ">
   <a class="navbar-brand text-white" href="/">MJV</a>
-  <form class="form-inline">
+  <form class="form-inline" *ngIf="customerLogged === false">
+    <i class="fas fa-user text-white"></i>
+    <a class="nav-link text-white" [routerLink]="['/login']" alt="Fazer login">Login</a>
+    <span class="text-white">|</span>
+    <a class="nav-link text-white" [routerLink]="['/register']">Cadastre-se</a>
+    <input class="form-control mr-sm-2" type="search" placeholder="O que procura?" aria-label="Search">
+    <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Pesquisar</button>
+  </form>
+  <form class="form-inline" *ngIf="customerLogged === true">
+    <a class="nav-link text-white" href="#"><i class="fa fa-user text-white" aria-hidden="true"></i></a>
+    <a class="nav-link text-white" href="/" (click)="logout()"><i class="fas fa-sign-out-alt"></i></a>
     <input class="form-control mr-sm-2" type="search" placeholder="O que procura?" aria-label="Search">
     <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Pesquisar</button>
   </form>
@@ -11,7 +21,8 @@
     <ul class="navbar-nav mr-auto" *ngFor="let category of categorys">
       <li class="nav-item active">
         <div>
-            <a class="nav-link text-dark"  href="#"  (click)="listProductByCategoryId(category.id)"><img [src]="category.image"> {{ category.name }} <span class="sr-only">(current)</span></a>
+          <a class="nav-link text-dark" href="#" (click)="listProductByCategoryId(category.id)"><img
+              [src]="category.image"> {{ category.name }} <span class="sr-only">(current)</span></a>
         </div>
       </li>
     </ul>

@@ -1,0 +1,26 @@
+<app-navigation #nav></app-navigation>
+
+<div class="wrapper fadeInDown">
+  <ngb-alert *ngIf="errorMessage" type="danger" (close)="errorMessage = null">{{ errorMessage }}</ngb-alert>
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <i class="fas fa-user fa-4x"></i>
+    </div>
+
+    <!-- Login Form -->
+    <form>
+      <input type="text" id="login" class="fadeIn second" name="login" [(ngModel)]="email" placeholder="Email">
+      <input type="password" id="password" class="fadeIn third" name="login" [(ngModel)]="password" placeholder="Senha">
+      <input type="submit" (click)="authenticate()" class="fadeIn fourth" value="Entrar">
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" href="#">Esqueceu sua senha?</a>
+    </div>
+
+  </div>
+</div>
