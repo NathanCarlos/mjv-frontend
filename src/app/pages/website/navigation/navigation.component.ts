@@ -12,9 +12,10 @@ import { CustomerService } from '../../../services/customer/customer.service';
 export class NavigationComponent implements OnInit {
 
   categorys: any = [];
-  productsByCategory: any = [];
+  products: any = [];
   customerLogged: boolean = false;
   customerData: any;
+  search: any;
 
   constructor(
     private categoryService: CategoryService,
@@ -22,27 +23,37 @@ export class NavigationComponent implements OnInit {
     private customerService: CustomerService) { }
 
   ngOnInit() {
-    if(localStorage.getItem('customer')){
+    if (localStorage.getItem('customer')) {
       this.customerLogged = true;
       this.customerData = JSON.parse(localStorage.getItem('customer'));
     }
-    this.categoryService.getCategorys().subscribe(categorys => { 
+    this.categoryService.getCategorys().subscribe(categorys => {
       this.categorys = categorys;
     }, error => {
       console.log("Erro ao carregar categorias!");
     })
   }
 
-  listProductByCategoryId(id): void { 
+  listProductByCategoryId(id): void {
     this.productService.getProductsByCategoryId(id).subscribe(
       products => {
-        this.productsByCategory = products;
-    }, error => {
-      console.log(error);
-    })
+        this.products = products;
+      }, error => {
+        console.log(error);
+      })
   }
-  
-  logout(){
+
+  listProductBySearchBar() {
+    this.productService.getProductsBySearch(this.search).subscribe(
+      products => {
+        this.products = products;
+      }, error => {
+        console.log(error);
+      }
+    )
+  }
+
+  logout() {
     this.customerService.logout();
   }
 
