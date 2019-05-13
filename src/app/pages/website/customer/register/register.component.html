@@ -1,0 +1,44 @@
+<app-navigation #nav></app-navigation>
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <i class="fas fa-user-plus fa-4x"></i>
+    </div>
+
+    <!-- Register Form -->
+    <form>
+
+      <input type="text" id="firstname" class="fadeIn second" name="firstname" [(ngModel)]="firstname"
+        placeholder="Nome *" maxlength="50">
+      <input type="text" id="lastname" class="fadeIn second" name="lastname" [(ngModel)]="lastname"
+        placeholder="Sobrenome Nome *" maxlength="50">
+      <input type="text" id="telephone" class="fadeIn second" name="telephone" [(ngModel)]="telephone"
+        placeholder="Telefone *" maxlength="20" mask='(00) 00000-0000'>
+      <input type="text" id="login" class="fadeIn second" name="login" [(ngModel)]="email" placeholder="Email *"
+        maxlength="255">
+      <input type="password" id="password" class="fadeIn third" name="login" [(ngModel)]="password"
+        placeholder="Senha *" maxlength="255">
+      <input type="text" id="postcode" class="fadeIn second" name="postcode" [(ngModel)]="postcode" placeholder="CEP *"
+        maxlength="9" mask='00000-000'>
+      <input type="text" id="street" class="fadeIn second" name="street" [(ngModel)]="street" placeholder="Rua *"
+        maxlength="100">
+      <input type="text" id="number" class="fadeIn second" name="number" [(ngModel)]="number" placeholder="Número *"
+        maslength="20">
+      <input type="text" id="neighborhood" class="fadeIn second" name="neighborhood" [(ngModel)]="neighborhood"
+        placeholder="Bairro *" maslength="100">
+      <input type="text" id="complement" class="fadeIn second" name="complement" [(ngModel)]="complement"
+        placeholder="Complemento" maslength="100">
+      <input type="text" id="city" class="fadeIn second" name="city" [(ngModel)]="city" placeholder="Cidade *"
+        maslength="100">
+      <input type="text" id="state" class="fadeIn second" name="state" [(ngModel)]="state" placeholder="Estado *"
+        maslength="100">
+      <ngb-alert *ngIf="errorMessage" type="danger" (close)="errorMessage = null">{{ errorMessage }}</ngb-alert>
+      <input type="button" class="fadeIn fourth" value="Concluir" (click)="submit()">
+
+    </form>
+
+  </div>
+</div>
