@@ -26,5 +26,9 @@ export class ProductService {
   getProductsByCategoryId(id){
     return this.http.get(`${environment.apiBaseUrl}/product/category/${id}`, { headers: this.headers })
   }
+
+  getProductsBySearch(description){
+    return this.http.get(`${environment.apiBaseUrl}/product/description/${description}`, { headers: this.headers })
+  }
   
 }
