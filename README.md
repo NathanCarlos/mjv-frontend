@@ -9,6 +9,9 @@
 
 **Link do projeto públicado: http://mjv-frontend.s3-website-sa-east-1.amazonaws.com/
 
+**Requisitos para rodar o a aplicação no local
+* Angular 7+
+
 **Instruções para rodar a aplicação no local
 
 * Clone o repositório
